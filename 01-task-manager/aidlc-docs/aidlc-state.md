@@ -17,13 +17,17 @@
 - **Structure patterns**: See code-generation.md Critical Rules
 
 ## Extension Configuration
-_To be recorded after Requirements Analysis clarifying questions are answered._
+| Extension | Enabled | Decided At |
+|---|---|---|
+| Security Baseline | No | Requirements Analysis |
+| Resiliency Baseline | No | Requirements Analysis |
+| Property-Based Testing | No | Requirements Analysis |
 
 ## Stage Progress
 
 ### 🔵 INCEPTION PHASE
 - [x] Workspace Detection
-- [ ] Requirements Analysis (IN PROGRESS - awaiting clarifying question answers)
+- [x] Requirements Analysis
 - [ ] User Stories - [PENDING ASSESSMENT]
 - [ ] Workflow Planning
 - [ ] Application Design - [PENDING ASSESSMENT]
@@ -42,6 +46,6 @@ _To be recorded after Requirements Analysis clarifying questions are answered._
 
 ## Current Status
 - **Lifecycle Phase**: INCEPTION
-- **Current Stage**: Requirements Analysis
-- **Next Stage**: Awaiting answers to `aidlc-docs/inception/requirements/requirement-verification-questions.md`
-- **Status**: Blocked on user input
+- **Current Stage**: Requirements Analysis (Complete)
+- **Next Stage**: Awaiting approval of `aidlc-docs/inception/requirements/requirements.md` to proceed to User Stories / Workflow Planning
+- **Status**: Blocked on user approval
