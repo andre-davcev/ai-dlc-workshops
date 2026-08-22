@@ -154,3 +154,95 @@
 **Context**: INCEPTION - Units Generation (Part 2 - Generation, GATE)
 
 ---
+
+## Units Generation - Approved
+**Timestamp**: 2026-08-21T00:00:00Z
+**User Input**: "Approve & Continue"
+**AI Response**: Units generation approved. INCEPTION phase complete. Proceeding to CONSTRUCTION PHASE — Backend unit first (per build sequence in unit-of-work-dependency.md), starting with Functional Design.
+**Context**: INCEPTION → CONSTRUCTION (Backend unit)
+
+---
+
+## Functional Design (Backend) - Plan Presented
+**Timestamp**: 2026-08-21T00:00:00Z
+**AI Response**: Created `aidlc-docs/construction/plans/backend-functional-design-plan.md` with 3 clarifying questions (task list ordering, title length constraint, duplicate title handling). Presented to user and stopped per GATE — awaiting answers.
+**Context**: CONSTRUCTION - Backend unit - Functional Design (Planning, GATE)
+
+---
+
+## Functional Design (Backend) - Generation Complete
+**Timestamp**: 2026-08-22T00:00:00Z
+**User Input**: "I'm done" — answers: Q1=B (newest first), Q2=B 60 (max 60 chars), Q3=A (duplicates allowed)
+**AI Response**: Answers unambiguous. Generated `domain-entities.md` (Task entity incl. supporting `createdAt` field for ordering), `business-rules.md` (BR1-BR6), and `business-logic-model.md` (addTask/listTasks pseudocode) in `aidlc-docs/construction/backend/functional-design/`. Marked all plan checkboxes [x]. Presented completion message and stopped — awaiting approval.
+**Context**: CONSTRUCTION - Backend unit - Functional Design (Generation, GATE)
+
+---
+
+## Functional Design (Backend) - Approved
+**Timestamp**: 2026-08-22T00:00:00Z
+**User Input**: "Continue to next stage"
+**AI Response**: Functional design (Backend unit) approved. Proceeding to NFR Requirements (Backend unit).
+**Context**: CONSTRUCTION - Backend unit - Functional Design → NFR Requirements
+
+---
+
+## NFR Requirements (Backend) - Plan Presented
+**Timestamp**: 2026-08-22T00:00:00Z
+**AI Response**: Created `aidlc-docs/construction/plans/backend-nfr-requirements-plan.md`. Scalability, Performance, Availability, Reliability, Maintainability, Usability assessed as N/A with documented rationale (single-user persona, extensions opted out, ACs already cover usability). 2 questions asked: backend language/framework, API access control (public AWS deployment). Presented to user and stopped per GATE — awaiting answers.
+**Context**: CONSTRUCTION - Backend unit - NFR Requirements (Planning, GATE)
+
+---
+
+## NFR Requirements (Backend) - Ambiguity Follow-up
+**Timestamp**: 2026-08-22T00:00:00Z
+**User Input**: "All done" — answers: Q1="NextJS" (free text, not a lettered option), Q2=B (API key required)
+**AI Response**: Q2 is unambiguous. Q1 flagged as ambiguous — Next.js normally bundles frontend UI + backend API routes into one app, conflicting with the approved 2-unit split (separate Frontend/Backend units) from Units Generation. Added follow-up Question 1a to `backend-nfr-requirements-plan.md` asking whether to scope Next.js to API-routes-only within the Backend unit (preserving the 2-unit split) or revisit Units Generation to merge into 1 unit. Presented to user and stopped per GATE — awaiting answer.
+**Context**: CONSTRUCTION - Backend unit - NFR Requirements (Planning, GATE - follow-up)
+
+---
+
+## NFR Requirements (Backend) - Generation Complete
+**Timestamp**: 2026-08-22T00:00:00Z
+**User Input**: "Backend only" (Question 1a Answer A)
+**AI Response**: Confirmed Next.js scoped to API-routes-only within the Backend unit, preserving the approved 2-unit split. Generated `nfr-requirements.md` (Scalability/Performance/Availability/Reliability/Maintainability = N/A with rationale; Usability covered by stories.md; Security = API key required) and `tech-stack-decisions.md` (Next.js API-routes-only, Node.js runtime, SQLite persistence, simple API key access control) in `aidlc-docs/construction/backend/nfr-requirements/`. Marked all plan checkboxes [x]. Presented completion message and stopped — awaiting approval.
+**Context**: CONSTRUCTION - Backend unit - NFR Requirements (Generation, GATE)
+
+---
+
+## NFR Requirements (Backend) - Approved
+**Timestamp**: 2026-08-22T00:00:00Z
+**User Input**: "Continue to Next Stage"
+**AI Response**: NFR requirements (Backend unit) approved. Proceeding to Infrastructure Design (Backend unit).
+**Context**: CONSTRUCTION - Backend unit - NFR Requirements → Infrastructure Design
+
+---
+
+## Infrastructure Design (Backend) - Plan Presented
+**Timestamp**: 2026-08-22T00:00:00Z
+**AI Response**: Created `aidlc-docs/construction/plans/backend-infrastructure-design-plan.md`. Messaging assessed N/A (fully synchronous logic); Monitoring defaulted to CloudWatch Logs only (no custom alarms, Resiliency opted out); Networking determined by compute choice. 2 questions asked: compute + SQLite storage approach (Lambda+EFS vs Fargate+EBS-backed volume [recommended] vs EC2+EBS), and CloudFormation stack sharing strategy (separate [recommended] vs combined). Presented to user and stopped per GATE — awaiting answers.
+**Context**: CONSTRUCTION - Backend unit - Infrastructure Design (Planning, GATE)
+
+---
+
+## Infrastructure Design (Backend) - Generation Complete
+**Timestamp**: 2026-08-22T00:00:00Z
+**User Input**: "All set" — answers: Q1=B (Fargate + persistent EBS-backed volume), Q2=A (separate CloudFormation stacks)
+**AI Response**: Answers unambiguous. Generated `infrastructure-design.md` (ECS/Fargate, ECR, EBS volume for SQLite, ALB, CloudWatch Logs, API key enforced in app code) and `deployment-architecture.md` (Mermaid diagram + text alt, separate CloudFormation stack scope, deployment flow) in `aidlc-docs/construction/backend/infrastructure-design/`. Marked all plan checkboxes [x]. Presented completion message and stopped — awaiting approval.
+**Context**: CONSTRUCTION - Backend unit - Infrastructure Design (Generation, GATE)
+
+---
+
+## Infrastructure Design (Backend) - Approved
+**Timestamp**: 2026-08-22T00:00:00Z
+**User Input**: "Continue to next stage"
+**AI Response**: Infrastructure design (Backend unit) approved. Proceeding to Code Generation (Backend unit).
+**Context**: CONSTRUCTION - Backend unit - Infrastructure Design → Code Generation
+
+---
+
+## Code Generation (Backend) - Plan Presented
+**Timestamp**: 2026-08-22T00:00:00Z
+**AI Response**: Created `aidlc-docs/construction/plans/backend-code-generation-plan.md` with 13 numbered steps (project structure, repository layer + tests, business logic + tests, API layer + tests, DB migration, documentation, deployment artifacts). Code location: `backend/` at workspace root. Presented plan summary to user and stopped — awaiting approval before generation begins.
+**Context**: CONSTRUCTION - Backend unit - Code Generation (Part 1 - Planning, GATE)
+
+---

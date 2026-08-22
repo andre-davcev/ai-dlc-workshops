@@ -4,7 +4,7 @@
 - **Project Name**: 01-task-manager
 - **Project Type**: Greenfield
 - **Start Date**: 2026-08-20T19:51:29Z
-- **Current Stage**: INCEPTION - Workflow Planning
+- **Current Stage**: CONSTRUCTION - Backend unit - Functional Design
 
 ## Workspace State
 - **Existing Code**: No
@@ -39,18 +39,30 @@
 - [x] Units Generation
 
 ### 🟢 CONSTRUCTION PHASE
+Build order: Backend unit first, then Frontend unit (per `unit-of-work-dependency.md`).
+
+#### Backend unit
+- [x] Functional Design
+- [x] NFR Requirements
+- [ ] NFR Design - SKIP
+- [x] Infrastructure Design
+- [ ] Code Generation - EXECUTE (ALWAYS) (IN PROGRESS)
+
+#### Frontend unit
 - [ ] Functional Design - EXECUTE
 - [ ] NFR Requirements - EXECUTE
 - [ ] NFR Design - SKIP
 - [ ] Infrastructure Design - EXECUTE
 - [ ] Code Generation - EXECUTE (ALWAYS)
+
+#### After all units
 - [ ] Build and Test - EXECUTE (ALWAYS)
 
 ### 🟡 OPERATIONS PHASE
 - [ ] Operations - PLACEHOLDER
 
 ## Current Status
-- **Lifecycle Phase**: INCEPTION
-- **Current Stage**: Units Generation (Complete)
-- **Next Stage**: Awaiting approval of unit-of-work artifacts to proceed to CONSTRUCTION PHASE (Backend unit first: Functional Design → NFR Requirements → Infrastructure Design → Code Generation)
-- **Status**: Blocked on user approval
+- **Lifecycle Phase**: CONSTRUCTION
+- **Current Stage**: Backend unit - Code Generation
+- **Next Stage**: TBD
+- **Status**: In progress
