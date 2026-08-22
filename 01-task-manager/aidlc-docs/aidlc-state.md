@@ -4,7 +4,7 @@
 - **Project Name**: 01-task-manager
 - **Project Type**: Greenfield
 - **Start Date**: 2026-08-20T19:51:29Z
-- **Current Stage**: INCEPTION - Requirements Analysis
+- **Current Stage**: INCEPTION - Workflow Planning
 
 ## Workspace State
 - **Existing Code**: No
@@ -23,21 +23,26 @@
 | Resiliency Baseline | No | Requirements Analysis |
 | Property-Based Testing | No | Requirements Analysis |
 
+## Execution Plan Summary
+- **Total Stages to Execute**: Application Design, Units Generation, Functional Design, NFR Requirements, Infrastructure Design, Code Generation, Build and Test
+- **Stages to Skip**: NFR Design (no patterns beyond tech stack, which is captured in NFR Requirements)
+- **Deployment Target**: AWS, provisioned via CloudFormation (user-specified)
+
 ## Stage Progress
 
 ### 🔵 INCEPTION PHASE
 - [x] Workspace Detection
 - [x] Requirements Analysis
 - [x] User Stories
-- [ ] Workflow Planning
-- [ ] Application Design - [PENDING ASSESSMENT]
-- [ ] Units Generation - [PENDING ASSESSMENT]
+- [x] Workflow Planning
+- [x] Application Design
+- [ ] Units Generation - EXECUTE (IN PROGRESS)
 
 ### 🟢 CONSTRUCTION PHASE
-- [ ] Functional Design - [PENDING ASSESSMENT]
-- [ ] NFR Requirements - [PENDING ASSESSMENT]
-- [ ] NFR Design - [PENDING ASSESSMENT]
-- [ ] Infrastructure Design - [PENDING ASSESSMENT]
+- [ ] Functional Design - EXECUTE
+- [ ] NFR Requirements - EXECUTE
+- [ ] NFR Design - SKIP
+- [ ] Infrastructure Design - EXECUTE
 - [ ] Code Generation - EXECUTE (ALWAYS)
 - [ ] Build and Test - EXECUTE (ALWAYS)
 
@@ -46,6 +51,6 @@
 
 ## Current Status
 - **Lifecycle Phase**: INCEPTION
-- **Current Stage**: User Stories (Complete)
-- **Next Stage**: Awaiting approval of `aidlc-docs/inception/user-stories/stories.md` and `personas.md` to proceed to Workflow Planning
+- **Current Stage**: Application Design (Complete)
+- **Next Stage**: Awaiting approval of `aidlc-docs/inception/application-design/` to proceed to Units Generation
 - **Status**: Blocked on user approval

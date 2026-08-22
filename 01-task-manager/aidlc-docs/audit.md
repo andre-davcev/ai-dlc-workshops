@@ -67,3 +67,74 @@
 **Context**: INCEPTION - User Stories (Part 2 - Generation, GATE)
 
 ---
+
+## User Stories - Revisit Question 1 (No Change)
+**Timestamp**: 2026-08-21T00:00:00Z
+**User Input**: "I would like to back one step and change one of my answers" → "Change question 1 to `Multiple personas needed` B" → (after being asked to describe the personas) "Nevermind I'll keep it A for now"
+**AI Response**: No change applied — Question 1 remains A (single generic persona). Stories and personas unchanged.
+**Context**: INCEPTION - User Stories (Part 2 - Generation, GATE)
+
+---
+
+## User Stories - Approved
+**Timestamp**: 2026-08-21T00:00:00Z
+**User Input**: "Approve & Continue"
+**AI Response**: User stories and personas approved. Proceeding to Workflow Planning.
+**Context**: INCEPTION - User Stories → Workflow Planning
+
+---
+
+## Workflow Planning - Approval
+**Timestamp**: 2026-08-21T00:00:00Z
+**AI Prompt**: "Ready to proceed with this plan?" — recommended executing Application Design, Units Generation, Functional Design, and NFR Requirements (tech stack selection); recommended skipping NFR Design and Infrastructure Design (no patterns/cloud deployment needed); Code Generation and Build and Test always execute.
+**User Response**: "Add Infrastructure Design to the plan. We'll deploy on AWS with CloudFormation."
+**Status**: Changes Requested
+**Context**: Workflow plan created with 6 stages to execute, 2 stages to skip. See `aidlc-docs/inception/plans/execution-plan.md`.
+
+---
+
+## Workflow Planning - Infrastructure Design Added
+**Timestamp**: 2026-08-21T00:00:00Z
+**User Input**: "Add Infrastructure Design to the plan. We'll deploy on AWS with CloudFormation."
+**AI Response**: Updated `execution-plan.md` — Infrastructure Design changed from SKIP to EXECUTE (rationale: AWS deployment via CloudFormation requires cloud resource mapping and IaC templates). Updated Mermaid diagram, text alternative, phase checklist, estimated timeline (7→8 stages), and success criteria to include CloudFormation. Updated `aidlc-state.md` Stage Progress and Execution Plan Summary to reflect Infrastructure Design EXECUTE and recorded Deployment Target: AWS/CloudFormation. Now execution plan has 7 stages to execute (Application Design, Units Generation, Functional Design, NFR Requirements, Infrastructure Design, Code Generation, Build and Test), 1 stage to skip (NFR Design). Presenting updated plan for re-approval.
+**Context**: INCEPTION - Workflow Planning (plan revision)
+
+---
+
+## Workflow Planning - Approved
+**Timestamp**: 2026-08-21T00:00:00Z
+**User Input**: "Approve & Continue"
+**AI Response**: Execution plan approved (7 stages to execute, 1 skipped). Proceeding to Application Design.
+**Context**: INCEPTION - Workflow Planning → Application Design
+
+---
+
+## Application Design - Plan Presented
+**Timestamp**: 2026-08-21T00:00:00Z
+**AI Response**: Created `aidlc-docs/inception/plans/application-design-plan.md` with 3 clarifying questions (component granularity, frontend-backend communication pattern, validation responsibility). Presented to user and stopped per GATE — awaiting answers.
+**Context**: INCEPTION - Application Design (Planning, GATE)
+
+---
+
+## Application Design - Generation Complete
+**Timestamp**: 2026-08-21T00:00:00Z
+**User Input**: "I'm done" — answers in `application-design-plan.md`: Q1=B (3 components: Web UI, Task API/Service, Task Repository), Q2=A (REST JSON HTTP API), Q3=A (backend-mandatory validation)
+**AI Response**: Answers unambiguous, no follow-up needed. Generated `components.md`, `component-methods.md`, `services.md`, `component-dependency.md`, and consolidated `application-design.md` in `aidlc-docs/inception/application-design/`. Marked all plan checkboxes [x]. Presented completion message and stopped — awaiting approval.
+**Context**: INCEPTION - Application Design (Generation, GATE)
+
+---
+
+## Application Design - Approved
+**Timestamp**: 2026-08-21T00:00:00Z
+**User Input**: "Approve & Continue"
+**AI Response**: Application design approved. Proceeding to Units Generation.
+**Context**: INCEPTION - Application Design → Units Generation
+
+---
+
+## Units Generation - Plan Presented
+**Timestamp**: 2026-08-21T00:00:00Z
+**AI Response**: Created `aidlc-docs/inception/plans/unit-of-work-plan.md` with 2 clarifying questions (unit boundary: 2 units vs 1 monolith; code organization/directory structure). Team Alignment and Business Domain categories assessed as N/A (single dev, single domain). Presented to user and stopped per GATE — awaiting answers.
+**Context**: INCEPTION - Units Generation (Part 1 - Planning, GATE)
+
+---
