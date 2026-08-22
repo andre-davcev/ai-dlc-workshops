@@ -6,13 +6,13 @@ Source: `aidlc-docs/inception/application-design/` (3 components: Web UI, Task A
 
 ## Execution Checklist
 
-- [ ] Step A: Confirm unit boundary / grouping strategy (see Question 1)
-- [ ] Step B: Confirm code organization / directory structure for greenfield project (see Question 2)
-- [ ] Step C: Generate `aidlc-docs/inception/application-design/unit-of-work.md`
-- [ ] Step D: Generate `aidlc-docs/inception/application-design/unit-of-work-dependency.md`
-- [ ] Step E: Generate `aidlc-docs/inception/application-design/unit-of-work-story-map.md`
-- [ ] Step F: Validate unit boundaries and dependencies
-- [ ] Step G: Ensure both stories (Add Task, View Task List) are assigned to units
+- [x] Step A: Confirm unit boundary / grouping strategy (see Question 1)
+- [x] Step B: Confirm code organization / directory structure for greenfield project (see Question 2)
+- [x] Step C: Generate `aidlc-docs/inception/application-design/unit-of-work.md`
+- [x] Step D: Generate `aidlc-docs/inception/application-design/unit-of-work-dependency.md`
+- [x] Step E: Generate `aidlc-docs/inception/application-design/unit-of-work-story-map.md`
+- [x] Step F: Validate unit boundaries and dependencies
+- [x] Step G: Ensure both stories (Add Task, View Task List) are assigned to units
 
 ## Category Assessment (not all need a question)
 

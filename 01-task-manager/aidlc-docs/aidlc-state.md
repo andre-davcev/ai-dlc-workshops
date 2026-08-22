@@ -36,7 +36,7 @@
 - [x] User Stories
 - [x] Workflow Planning
 - [x] Application Design
-- [ ] Units Generation - EXECUTE (IN PROGRESS)
+- [x] Units Generation
 
 ### 🟢 CONSTRUCTION PHASE
 - [ ] Functional Design - EXECUTE
@@ -51,6 +51,6 @@
 
 ## Current Status
 - **Lifecycle Phase**: INCEPTION
-- **Current Stage**: Application Design (Complete)
-- **Next Stage**: Awaiting approval of `aidlc-docs/inception/application-design/` to proceed to Units Generation
+- **Current Stage**: Units Generation (Complete)
+- **Next Stage**: Awaiting approval of unit-of-work artifacts to proceed to CONSTRUCTION PHASE (Backend unit first: Functional Design → NFR Requirements → Infrastructure Design → Code Generation)
 - **Status**: Blocked on user approval
