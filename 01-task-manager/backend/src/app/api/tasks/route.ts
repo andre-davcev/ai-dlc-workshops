@@ -1,12 +1,7 @@
 import { NextResponse } from 'next/server';
 import { addTask, listTasks } from '../../../lib/task-service';
-import { isAuthorized } from '../../../lib/auth';
 
 export async function POST(request: Request) {
-  if (!isAuthorized(request)) {
-    return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
-  }
-
   const body = await request.json().catch(() => null);
   const title = body?.title;
 
@@ -18,11 +13,7 @@ export async function POST(request: Request) {
   return NextResponse.json({ task: result.task }, { status: 201 });
 }
 
-export async function GET(request: Request) {
-  if (!isAuthorized(request)) {
-    return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
-  }
-
+export async function GET() {
   const tasks = listTasks();
   return NextResponse.json({ tasks }, { status: 200 });
 }

@@ -4,7 +4,7 @@
 
 ```mermaid
 flowchart LR
-    Client(["Client (Frontend unit)"]) -->|HTTPS + API key header| ALB["Application Load Balancer"]
+    Client(["Client (Frontend unit)"]) -->|HTTPS| ALB["Application Load Balancer"]
     ALB --> ECS["ECS Service on Fargate<br/>(Next.js API-routes app)"]
     ECS -->|read/write| EBS[("EBS volume<br/>SQLite file")]
     ECS -->|logs| CW["CloudWatch Logs"]
@@ -15,7 +15,7 @@ flowchart LR
 
 ```
 Client (Frontend unit)
-   --(HTTPS + API key header)-->
+   --(HTTPS)-->
 Application Load Balancer
    -->
 ECS Service on Fargate (Next.js API-routes app)
@@ -40,4 +40,4 @@ The Frontend unit's stack is separate and references this stack's ALB endpoint (
 1. Build the Next.js API-routes app into a container image
 2. Push the image to Amazon ECR
 3. CloudFormation stack (Backend unit) provisions/updates the ECS service to run the new image
-4. ECS service becomes reachable via the ALB, gated by the API key on every request
+4. ECS service becomes reachable via the ALB (fully open, no access control)

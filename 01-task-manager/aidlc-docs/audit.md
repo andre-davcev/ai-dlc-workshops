@@ -261,3 +261,40 @@
 **Context**: CONSTRUCTION - Backend unit - Code Generation (Part 2 - Generation, GATE)
 
 ---
+
+## Code Generation (Backend) - Approved
+**Timestamp**: 2026-08-22T00:00:00Z
+**User Input**: "Continue to Next Stage"
+**AI Response**: Code generation (Backend unit) approved. Backend unit fully complete (Functional Design, NFR Requirements, Infrastructure Design, Code Generation). Proceeding to Frontend unit — Functional Design.
+**Context**: CONSTRUCTION - Backend unit complete → Frontend unit - Functional Design
+
+---
+
+## Functional Design (Frontend) - Plan Presented
+**Timestamp**: 2026-08-22T00:00:00Z
+**AI Response**: Created `aidlc-docs/construction/plans/frontend-functional-design-plan.md`. Flagged an architectural tension: unit-of-work.md scoped Frontend as static-asset deployable, but Backend now requires an API key header, which a static site cannot keep secret. 3 questions asked: API key handling approach, loading/error state handling, client-side title-length validation. Presented to user and stopped per GATE — awaiting answers.
+**Context**: CONSTRUCTION - Frontend unit - Functional Design (Planning, GATE)
+
+---
+
+## Functional Design (Frontend) - Question 1 Reopens Backend Decision
+**Timestamp**: 2026-08-22T00:00:00Z
+**User Input**: "1" → (clarification requested) → "Answered the questions" — Q1=X "Remove x-api-key requirement and just open up the api endpoints", Q2=A (minimal loading/generic error), Q3=A (mirror 60-char limit client-side)
+**AI Response**: Q2 and Q3 unambiguous. Q1 requested reopening an already-approved-and-implemented Backend decision (NFR Requirements Question 2, Code Generation). Asked user to confirm via AskUserQuestion given the blast radius across multiple completed Backend artifacts/code. User confirmed: "Yes, remove it everywhere."
+**Context**: CONSTRUCTION - Frontend unit - Functional Design (Planning) — retroactive change confirmation
+
+---
+
+## Backend Unit - Retroactive Revision: API Key Removed
+**Timestamp**: 2026-08-22T00:00:00Z
+**AI Response**: Removed the API-key access control decision from the Backend unit, retroactively updating already-approved artifacts and code: `nfr-requirements.md`, `tech-stack-decisions.md` (Security section revised with rationale), `infrastructure-design.md`, `deployment-architecture.md` (diagram/text/flow updated), `api-docs.md`, `api-layer-summary.md`, `deployment-notes.md` (docs); `backend/src/lib/auth.ts` deleted, `backend/src/app/api/tasks/route.ts` simplified (no auth check), `backend/tests/api/tasks.test.ts` updated (401 tests removed), `backend/infrastructure/template.yaml` (`ApiKey` parameter and env var removed), `backend/.env.example`, `backend/README.md` updated. Re-verified: `npm test` — 16/16 passing, `tsc --noEmit` — no errors, CloudFormation YAML re-validated. API is now fully open (no authentication), consistent with Security Baseline being opted out.
+**Context**: CONSTRUCTION - Backend unit (retroactive revision triggered from Frontend unit Functional Design)
+
+---
+
+## Functional Design (Frontend) - Generation Complete
+**Timestamp**: 2026-08-22T00:00:00Z
+**AI Response**: Generated `domain-entities.md` (Task display model + UI state), `business-rules.md` (FR-BR1-FR-BR6: client-side blank-title and 60-char checks, no auth handling, loading indicator, generic error, empty-state), `business-logic-model.md` (loadTasks/submitAddTask pseudocode), and `frontend-components.md` (TaskManagerApp → AddTaskForm + TaskList → TaskListItem hierarchy, props/state, API integration points) in `aidlc-docs/construction/frontend/functional-design/`. Marked all plan checkboxes [x]. Presented completion message and stopped — awaiting approval.
+**Context**: CONSTRUCTION - Frontend unit - Functional Design (Generation, GATE)
+
+---

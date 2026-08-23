@@ -18,10 +18,6 @@ Parameters:
   ContainerImage:
     Type: String
     Description: Full ECR image URI (repository:tag) to deploy.
-  ApiKey:
-    Type: String
-    NoEcho: true
-    Description: Value for the API_KEY environment variable (simple API-key access control).
 
 Resources:
   EcrRepository:
@@ -130,8 +126,6 @@ Resources:
           PortMappings:
             - ContainerPort: 3000
           Environment:
-            - Name: API_KEY
-              Value: !Ref ApiKey
             - Name: SQLITE_DB_PATH
               Value: /app/data/tasks.db
           MountPoints:

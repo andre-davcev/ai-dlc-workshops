@@ -6,15 +6,16 @@ Next.js app exposing only API routes (no pages/UI) for the personal task manager
 
 ```bash
 npm install
-cp .env.example .env   # then set API_KEY to a real value
+cp .env.example .env
 ```
 
 ## Environment Variables
 
 | Variable | Purpose | Default |
 |---|---|---|
-| `API_KEY` | Required on every request via the `x-api-key` header. No default — if unset, all requests are rejected (401). | (none) |
 | `SQLITE_DB_PATH` | Path to the SQLite database file. | `./data/tasks.db` |
+
+**Note**: This API has no authentication/access control — it is fully open by design (single-user PoC scope, Security Baseline extension opted out). See `aidlc-docs/construction/backend/nfr-requirements/`.
 
 ## Run Locally
 

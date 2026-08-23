@@ -11,11 +11,10 @@
 SQLite (decided in `requirements.md` NFR1), accessed from the Next.js API routes via the Task Repository component.
 
 ## API Access Control
-**Simple API key required on all requests** (NFR Requirements Question 2, Answer B).
+**Fully open — no authentication/API key.**
 
-- Not a full authentication/authorization system — Security Baseline extension is opted out.
-- A single shared API key is checked on incoming requests (e.g., via a request header); requests without a valid key are rejected.
-- Exact mechanism (header name, key storage/rotation) is a Code Generation-level detail.
+- Originally decided as a simple API key (NFR Requirements Question 2, Answer B), but reversed during Frontend unit Functional Design (Question 1): a static-asset Frontend cannot keep an embedded key secret from the browser, and rather than add a server-side proxy to protect it, the user chose to drop the key requirement entirely.
+- Consistent with Security Baseline being opted out and the single-user PoC scope.
 
 ## Deployment Alignment
 This tech stack choice is finalized here; how it maps to specific AWS resources (e.g., hosting model for the Next.js API-routes app, SQLite storage) is decided next in Infrastructure Design.

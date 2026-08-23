@@ -19,7 +19,7 @@ Standard code quality practices apply (readable code, no dead code). No special 
 Covered by `stories.md` acceptance criteria already (empty-state message, validation feedback on blank title). No additional NFR needed.
 
 ## Security
-Security Baseline extension opted out in Requirements Analysis (no blocking SECURITY rules enforced). One concrete decision was made: this API is deployed publicly on AWS and requires a **simple API key** on all requests (not a full auth system) — see `tech-stack-decisions.md`.
+Security Baseline extension opted out in Requirements Analysis (no blocking SECURITY rules enforced). This API is deployed publicly on AWS with **no access control** — fully open. Revised during Frontend unit Functional Design: an API key was found to be incompatible with the Frontend's static-asset deployment (no way to keep a client-embedded key secret), and the user opted to remove the key requirement entirely rather than add a server-side proxy. See `tech-stack-decisions.md`.
 
 ## Tech Stack Selection
 See `tech-stack-decisions.md` for the language/framework decision and rationale.

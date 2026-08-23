@@ -46,10 +46,10 @@ Build order: Backend unit first, then Frontend unit (per `unit-of-work-dependenc
 - [x] NFR Requirements
 - [ ] NFR Design - SKIP
 - [x] Infrastructure Design
-- [ ] Code Generation - EXECUTE (ALWAYS) (IN PROGRESS)
+- [x] Code Generation
 
 #### Frontend unit
-- [ ] Functional Design - EXECUTE
+- [ ] Functional Design - EXECUTE (IN PROGRESS)
 - [ ] NFR Requirements - EXECUTE
 - [ ] NFR Design - SKIP
 - [ ] Infrastructure Design - EXECUTE
@@ -63,6 +63,6 @@ Build order: Backend unit first, then Frontend unit (per `unit-of-work-dependenc
 
 ## Current Status
 - **Lifecycle Phase**: CONSTRUCTION
-- **Current Stage**: Backend unit - Code Generation
+- **Current Stage**: Frontend unit - Functional Design
 - **Next Stage**: TBD
 - **Status**: In progress
